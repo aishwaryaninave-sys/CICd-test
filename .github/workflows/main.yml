@@ -1,23 +1,25 @@
-name: cicd withe test case
+name: Python CI Pipeline
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
+
 jobs:
-   build-test:
-     runs-on: ubuntu-latest
-     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  build-test:
+    runs-on: ubuntu-latest
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
 
-      - name: Run Unit Tests
-        run: |
-           python -m pytest
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Run Unit Tests
+      run: |
+        python -m pytest
