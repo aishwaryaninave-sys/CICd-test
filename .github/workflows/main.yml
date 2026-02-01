@@ -3,7 +3,7 @@ name: cicd withe test case
 on:
   push:
     branches: ["main"]
- Jobs:
+jobs:
    build-test:
      runs-on: ubuntu-latest
      steps:
