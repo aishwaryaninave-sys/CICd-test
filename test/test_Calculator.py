@@ -1,9 +1,5 @@
 from app.calculator import add,substractor
-'''
-  from app ->folder
-  calcu;ator -> filename
-  import add,substract (function)
-  '''
+
 def test_add():
   assert add(2,3) == 5
 
